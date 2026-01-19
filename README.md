@@ -206,21 +206,26 @@ CORS_ORIGINS=http://localhost:5173,http://localhost:3000
 
 ## 🚢 Déploiement
 
+---
+
+## 🚀 Deployment
+
 ### Backend (Render)
 
-```bash
-pip install -r requirements.txt
-gunicorn app:app
-```
+1. **Build command**: `pip install -r requirements.txt`
+2. **Start command**: `gunicorn app:app`
+3. **Environment Variables**:
+   - `DATABASE_URL`: Your PostgreSQL URL (or use default SQLite)
+   - `SECRET_KEY`: A strong random string
+   - `JWT_SECRET_KEY`: Another strong random string
+   - `CORS_ORIGINS`: `https://your-app-name.vercel.app` (Your Vercel URL)
 
 ### Frontend (Vercel)
 
-* Root directory : `frontend`
-* Variable :
-
-```env
-VITE_API_URL=https://your-backend.onrender.com/api
-```
+1. **Framework Preset**: `Vite`
+2. **Root Directory**: `frontend`
+3. **Environment Variables**:
+   - `VITE_API_URL`: `https://tradesenseai-g09w.onrender.com/api`
 
 ---
 
